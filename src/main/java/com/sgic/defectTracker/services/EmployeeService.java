@@ -9,8 +9,10 @@ public interface EmployeeService {
 	Employee saveEmployee(Employee employee); // Save method for Employee Entity
 
 	List<Employee> listEmployeeInfo(); // Method for Employee List
-	
+
 	Employee getEmployeeById(String employeeId); // method for Getting One Employee Record
-	
-//	Employee deleteEmployeeById()
+
+	Employee deleteEmployeeById(String employeeId); // Delete Method for Employee Info
+
+	Employee updateEmployee(Employee employee); // Update Method for Employee Details
 }

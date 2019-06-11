@@ -41,5 +41,15 @@ public class EmployeeDTOMapper {
 	public EmployeeDTO getEmployee(String employeeId) { // ViewOneEmployee Method for EmployeeMapper
 		return EntityToDTO(employeeService.getEmployeeById(employeeId)); // Call getById Method from EmployeeService
 	}
+	
+	public EmployeeDTO deleteEmployee(String employeeId) { // DeleteEmployee method for EmployeeDTOMapper
+		employeeService.deleteEmployeeById(employeeId); // Call deleteEmployeeById method from EmployeeService
+		return null;	
+	}
+	
+	public void updateEmployeeOfMapper(EmployeeDTO employeeDTO) { // UpadteEmployee method for EmployeeMapper
+		Employee employee = modelMapper.map(employeeDTO, Employee.class);
+		EntityToDTO(employeeService.updateEmployee(employee)); 
+	}
 
 }

@@ -28,4 +28,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository.findEmployeeByEmployeeId(employeeId); // Call the findByEmployeeId method from JPARepository 
 	}
 	
+	@Override
+	public Employee deleteEmployeeById(String employeeId) { // Implementation for deleteEmployeeById method
+        employeeRepository.deleteById(employeeId); // Call the deleteById method from JPARepository
+		return null;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee employee) { // Implementation for updateEmployee method
+		return employeeRepository.save(employee); //Call the save method for JPARepository
+	}
+	
 }
